@@ -20,6 +20,8 @@ class DefaultController extends Controller
     }
 
     /**
+     * hello action of default controller
+     *
      * @Route("/hi", name="hallo")
      */
     public function halloAction(Request $request)
