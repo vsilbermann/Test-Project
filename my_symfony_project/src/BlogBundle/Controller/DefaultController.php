@@ -8,6 +8,23 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('BlogBundle:Default:index.html.twig');
+        $_strName='Vika';
+
+        return $this->render('BlogBundle:Default:index.html.twig', ['name' => $_strName]);
+    }
+
+    public function listAction($page)
+    {
+        $_strName='List';
+
+        return $this->render('BlogBundle:Default:list.html.twig', ['name' => $_strName]);
+    }
+
+    public function showAction($slug)
+    {
+
+        $url = $this->generateUrl('blog_show', ['slug' => $slug]);
+
+        return $this->render('BlogBundle:Default:show.html.twig', ['url' => $url]);
     }
 }

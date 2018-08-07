@@ -1,3 +1,13 @@
 blog_homepage:
     path:     /
     defaults: { _controller: BlogBundle:Default:index }
+
+blog_list:
+    path:     /blog/{page}
+    defaults: { _controller: BlogBundle:Default:list, page: 1 }
+    requirements:
+        page: '\d+'
+
+blog_show:
+    path:     /blog/{slug}
+    defaults: { _controller: BlogBundle:Default:show }
