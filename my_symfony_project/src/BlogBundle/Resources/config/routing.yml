@@ -2,6 +2,10 @@ blog_homepage:
     path:     /
     defaults: { _controller: BlogBundle:Default:index }
 
+blog_index_slash:
+    path:     /blog/
+    defaults: { _controller: BlogBundle:Default:list,  page: 1}
+
 blog_list:
     path:     /blog/{page}
     defaults: { _controller: BlogBundle:Default:list, page: 1 }

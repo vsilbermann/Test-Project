@@ -15,7 +15,7 @@ class DefaultController extends Controller
 
     public function listAction($page)
     {
-        $_strName='List';
+        $_strName='List to Page:  page: '.$page;
 
         return $this->render('BlogBundle:Default:list.html.twig', ['name' => $_strName]);
     }
