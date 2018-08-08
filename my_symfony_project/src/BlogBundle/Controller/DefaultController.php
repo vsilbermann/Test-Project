@@ -27,4 +27,5 @@ class DefaultController extends Controller
 
         return $this->render('BlogBundle:Default:show.html.twig', ['url' => $url]);
     }
+
 }
