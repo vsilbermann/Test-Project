@@ -1,6 +1,18 @@
+{% block stylesheets %}
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
+{% endblock %}
+
 {% block body %}
-    <h1>In StreamAction, Your Route is "{{ url }}!"git<h1>
-            <h2>Parameter: {{ param }}!<h2>
+    <h1>In StreamAction, Your Route is "{{ url }}"<h1>
+            <h2>Parameter: {{ param }}<h2>
+                    <h3>alternative: {{ url_aternative }}<h3>
+                            <br>
+                            <div>
+                                <a href="{{ path('blog_index_slash') }}">zum Blog relative URL</a>
+                                <br>
+                                <a href="{{ url('blog_index_slash') }}">zum Blog absolute UR</a>
+                            </div>
+
 {% endblock %}
 
 

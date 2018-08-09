@@ -31,8 +31,10 @@ class DefaultController extends Controller
     public function streamAction($slug)
     {
 
-        $url = $this->generateUrl('blog_stream', ['slug' => $slug]);
+        $urlWhole = $this->generateUrl('blog_stream', ['slug' => $slug]);
 
-        return $this->render('BlogBundle:Default:stream.html.twig', ['url' => $url,'param'=>$slug]);
+        $urlAlternativ = $this->get('router')->generate('blog_stream', ['slug' => $slug,'category' => 'Symfony']);
+
+        return $this->render('BlogBundle:Default:stream.html.twig', ['url' => $urlWhole,'param'=>$slug,'url_aternative'=>$urlAlternativ]);
     }
 }
