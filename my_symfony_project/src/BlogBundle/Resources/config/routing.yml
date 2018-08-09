@@ -19,3 +19,6 @@ blog_show:
 blog_stream:
     path:     /blogstream/{slug}
     defaults: { _controller: BlogBundle:Default:stream }
+blog_redirect:
+    path:     /blog_redirect
+    defaults: { _controller: BlogBundle:Default:redirect }

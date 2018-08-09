@@ -1,17 +1,34 @@
-{% block stylesheets %}
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
-{% endblock %}
+{% extends 'base.html.twig' %}
+
 
 {% block body %}
     <h1>In StreamAction, Your Route is "{{ url }}"<h1>
             <h2>Parameter: {{ param }}<h2>
                     <h3>alternative: {{ url_aternative }}<h3>
                             <br>
+                            <br clear="all">
                             <div>
-                                <a href="{{ path('blog_index_slash') }}">zum Blog relative URL</a>
+                                <span class="headline">Relative URL:</span>
+                                <a href="{{ path('blog_index_slash') }}">zum Blog relativ</a>
                                 <br>
-                                <a href="{{ url('blog_index_slash') }}">zum Blog absolute UR</a>
+                                <span class="headline">Absolute URL:</span>
+                                <a href="{{ url('blog_index_slash') }}">zum Blog absolut</a>
                             </div>
+                            <br clear="all">
+                            <br clear="all">
+                            <span class="red">System Variablen:</span>
+                            <div class="systemvar">
+                                <ul>
+                                    <li>User: {{ app.user }}</li>
+                                    <li>Request: {{ app.request }}</li>
+                                    <li>Enviroment: {{ app.environment }}</li>
+                                    <li>Debug: {{ app.debug }}</li>
+                                    <li>Request method: {{ app.request.method }}</li>
+                                </ul>
+                            </div>
+                            <span class="red">Session: (versteckt mit HTML-Kommentar)</span>
+                            <span>{{ app.session.all | json_encode}}</span>
+                            <!--span>{{ dump(app.request) }}</span-->
 
 {% endblock %}
 
