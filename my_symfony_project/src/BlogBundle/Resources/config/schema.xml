@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<database name="mydb" namespace="BlogBundlе\Model" defaultIdMethod="native">
+<database name="default" namespace="BlogBundlе\Model" defaultIdMethod="native"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../vendor/propel/propel/resources/dtd/database.dtd">
 
     <table name="blog_post">
-        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="title" type="varchar" size="255" />
-        <column name="excerpt" type="longvarchar" />
-        <column name="body" type="longvarchar" />
-        <column name="created_at" type="timestamp" />
+        <column name="id" type="INTEGER" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="title" type="VARCHAR" size="255" />
+        <column name="excerpt" type="LONGVARCHAR" />
+        <column name="body" type="LONGVARCHAR" />
+        <column name="created_at" type="TIMESTAMP" />
     </table>
 
 
     <table name="blog_comment">
-        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="post_id" type="integer" required="true" />
+        <column name="id" type="INTEGER" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="post_id" type="INTEGER" required="true" />
         <foreign-key foreignTable="blog_post">
             <reference local="post_id" foreign="id"/>
         </foreign-key>
-        <column name="author" type="varchar" size="255" />
-        <column name="email" type="varchar" size="255" />
-        <column name="body" type="longvarchar" />
-        <column name="created_at" type="timestamp" />
+        <column name="author" type="VARCHAR" size="255" />
+        <column name="email" type="VARCHAR" size="255" />
+        <column name="body" type="LONGVARCHAR" />
+        <column name="created_at" type="TIMESTAMP" />
     </table>
 
 </database>
