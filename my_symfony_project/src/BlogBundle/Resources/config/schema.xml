@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="mydb" namespace="BlogBundlе\Model" defaultIdMethod="native">
+
+    <table name="blog_post">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="title" type="varchar" size="255" />
+        <column name="excerpt" type="longvarchar" />
+        <column name="body" type="longvarchar" />
+        <column name="created_at" type="timestamp" />
+    </table>
+
+
+    <table name="blog_comment">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="post_id" type="integer" required="true" />
+        <foreign-key foreignTable="blog_post">
+            <reference local="post_id" foreign="id"/>
+        </foreign-key>
+        <column name="author" type="varchar" size="255" />
+        <column name="email" type="varchar" size="255" />
+        <column name="body" type="longvarchar" />
+        <column name="created_at" type="timestamp" />
+    </table>
+
+</database>

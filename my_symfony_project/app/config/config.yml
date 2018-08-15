@@ -58,6 +58,18 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
+# Propel Configuration
+propel:
+    database:
+        connections:
+            default:
+                adapter:    pdo_mysql
+                dsn:        pdo_mysql:host=%database_host%;dbname=%database_name%;charset=UTF8
+                user:       %database_user%
+                password:   %database_password%
+                options:              {}
+                attributes:           {}
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: '%mailer_transport%'
