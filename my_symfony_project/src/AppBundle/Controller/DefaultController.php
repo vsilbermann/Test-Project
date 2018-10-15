@@ -26,7 +26,7 @@ class DefaultController extends Controller
      */
     public function halloAction(Request $request)
     {
-        // replace this example code with whatever you need
+        // replace this example code with whatever you need (or remove this action)
         return $this->render('default/hallo.html.twig');
     }
 }
